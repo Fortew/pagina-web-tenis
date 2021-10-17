@@ -1,0 +1,99 @@
+body,
+ul {
+    margin: 0px;
+    padding: 0px;
+    background: rgb(43, 42, 42);
+}
+
+a {
+    color: rgb(250, 248, 248);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    background: none;
+}
+
+a:hover {
+    background: rgb(166, 170, 170);
+}
+
+#header {
+    box-sizing: border-box;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    justify-content: space-between;
+    background: rgb(110, 226, 226);
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+#menu a {
+    display: block;
+    padding: .5rem;
+}
+
+#btn-mobile {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: rgb(114, 113, 113);
+        transition: .6seg;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu {
+        height: calc(100vh - 7px);
+        visibility: visible;
+    }
+    #menu a {
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: rgb(114, 113, 113);
+    }
+    #btn-mobile {
+        display: flex;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        gap: .5rem;
+        background: none;
+        cursor: pointer;
+    }
+    #hamburger {
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburger::after,
+    #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: rgb(127, 128, 136);
+        margin-top: 5px;
+    }
+}
+
+.botao {
+    display: flex;
+    padding: 0.5rem 40rem;
+    gap: .5rem;
+    margin: 1rem 0rem;
+    background: rgb(110, 226, 226);
+}
